@@ -1,4 +1,4 @@
-require('dotenv').config({ path: 'variables.env'});
+require('dotenv').config({ path: 'variables.env' });
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -14,7 +14,7 @@ const chatkit = new Chatkit.default({
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/users', (req, res) => {
   const { username } = req.body;
@@ -45,5 +45,5 @@ app.post('/authenticate', (req, res) => {
 
 app.set('port', process.env.PORT || 5200);
 const server = app.listen(app.get('port'), () => {
-  console.log(`Express running -> PORT ${server.address().port}`);
+  console.log(`Express running → PORT ${server.address().port}`);
 });
